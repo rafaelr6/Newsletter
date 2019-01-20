@@ -44,7 +44,7 @@ app.post('/', function (req, res) {
   console.log('error:', error); // Print the error if one occurred
   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
   //console.log('body:', body); // Print the HTML for the Google homepage.
-  
+
   res.sendFile(__dirname + "/success.html");
 
 });
@@ -54,5 +54,6 @@ app.post('/', function (req, res) {
 // Mailchimp API Key df408c831227af1eeaede09a19ca3439-us20
 // Mailchip listid = c7e0b4fde4
 
-app.listen(3000);
-console.log ("server 3000");
+app.listen(process.env.PORT || 3000, function(){
+  console.log ("server 3000");
+});
